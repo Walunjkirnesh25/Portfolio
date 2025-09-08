@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Kirnesh Walunj Portfolio Design System
+Artistic, vibrant colors with trek & creative vibes
+*/
+
+@layer base {
+  :root {
+    /* Base colors - clean white & soft grays */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+    
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    
+    /* Text colors */
+    --text-dark: 0 0% 20%;
+    --text-light: 0 0% 60%;
+    
+    /* Brand colors */
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 20%;
+    
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
+    
+    --accent: 122 39% 49%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Artistic gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(249 100% 64%), hsl(314 100% 77%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 98%), hsl(220 13% 91%));
+    --gradient-accent: linear-gradient(135deg, hsl(122 39% 49%), hsl(142 76% 36%));
+    
+    /* Trek & adventure colors */
+    --mountain: 200 25% 25%;
+    --forest: 122 39% 49%;
+    --sky: 200 100% 85%;
+    --sunset: 25 95% 60%;
+    
+    /* Artistic elements */
+    --sketch: 45 29% 87%;
+    --canvas: 36 33% 92%;
+    
+    /* Animation variables */
+    --float-duration: 3s;
+    --pulse-duration: 2s;
+    
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-roboto;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat;
+  }
+}
+
+@layer components {
+  /* Hero text styles */
+  .hero-title {
+    @apply font-montserrat font-bold text-6xl md:text-8xl lg:text-9xl text-text-dark leading-none tracking-tight;
+  }
+  
+  .hero-subtitle {
+    @apply font-montserrat font-light text-xl md:text-2xl text-text-light;
+  }
+  
+  /* Artistic elements */
+  .artistic-text {
+    @apply font-pacifico text-accent;
+  }
+  
+  /* Floating animations */
+  .float {
+    animation: float var(--float-duration) ease-in-out infinite;
+  }
+  
+  .float-delayed {
+    animation: float var(--float-duration) ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  .pulse-gentle {
+    animation: pulse-gentle var(--pulse-duration) ease-in-out infinite;
+  }
+  
+  /* Card styles */
+  .artwork-card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+    background: var(--gradient-card);
+  }
+  
+  .trek-card {
+    @apply relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500;
+  }
+  
+  /* Gradient backgrounds */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes pulse-gentle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  /* Texture overlay */
+  .canvas-texture {
+    position: relative;
+  }
+  
+  .canvas-texture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(0,0,0,.15) 1px, transparent 0);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+}
