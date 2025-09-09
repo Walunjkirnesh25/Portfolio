@@ -59,7 +59,7 @@ const Home = () => {
         ))}
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 max-w-6xl mx-auto mt-10">
+        <div className="relative z-10 text-center px-4 max-w-6xl mx-auto mt-20">
           <div className="mb-8">
             <span className="inline-block px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white font-roboto text-sm font-medium backdrop-blur-md">
               <MapPin size={16} className="inline mr-2" />
